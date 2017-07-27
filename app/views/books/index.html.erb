@@ -1,0 +1,21 @@
+<h1>Liste des livres</h1>
+<% @books.each do |book| %>
+<p> <%= book_link book %> </p>
+<% end %>
+<%= paginate @books %>
+
+
+<%= form_tag "/books", method: "post" do %>
+<input type="text" name="title" placeholder="title"/>
+<input type="text" name="category_id" placeholder="category_id"/>
+
+<select name="category_id">
+  <% @categories.each do |category|%>
+    <option value="<%= category.id%>">
+      <%=category.name %>
+    </option>
+    <%end%>
+  </select>
+
+<input type="submit" value="Ajouter le livre" />
+<% end %>

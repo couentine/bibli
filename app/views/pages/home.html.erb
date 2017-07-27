@@ -1,0 +1,12 @@
+<h1>Bievenue</h1>
+<p>Ceci est un site que je realise avec Ruby oin rails</p>
+<p> Ceci est une variable : <%= @variable %>. </P>
+<% if @variable == 42%>
+<p> Ma variable vaut 42 </p>
+<% else %>
+<p> Ma variable ne vaut pas 42</p>
+<% end %>
+
+<% @variable.times do |i| %>
+  <%= i %>
+  <% end %>
